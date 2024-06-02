@@ -17,18 +17,16 @@ Keychron Q2 Pro QMK with Neo2
 1. Setting Up Your [QMK Environment](https://docs.qmk.fm/newbs_getting_started)
 2. Clone the Ne0Chr0n repository into the appropriate directory of the QMK structure:
     ```sh
-    cd /qmk_firmware/keyboards/keychron/q2/ansi_encoder/keymaps
-    mkdir neo2
-    cd neo2
+    cd qmk_firmware/keyboards/keychron/q2/ansi_encoder/keymaps
     git clone https://github.com/Brieden/Ne0Chr0n.git
     ```
 3. Compile the firmware:
     ```sh
-    qmk compile -kb keychron/q2/ansi_encoder -km neo2
+    qmk compile -kb keychron/q2/ansi_encoder -km Ne0Chr0n
     ```
-6. Flash the firmware to your Keychron Q2 Pro:
+4. Flash the firmware to your Keychron Q2 Pro:
     ```sh
-    qmk flash -kb keychron/q2/ansi_encoder -km neo2
+    qmk flash -kb keychron/q2/ansi_encoder -km Ne0Chr0n
     ```
 
 ## Acknowledgements
