@@ -14,10 +14,14 @@ Keychron Q2 Pro QMK with Neo2
 
 
 ## Installation
-1. Setting Up Your [QMK Environment](https://docs.qmk.fm/newbs_getting_started)
+1. Setting Up Your [QMK Environment](https://docs.qmk.fm/newbs_getting_started)\
+   But finish the steps with a specific QMK repo:
+   ```sh
+   qmk setup Keychron/qmk_firmware.git -b bluetooth_playground
+    ```
 2. Clone the Ne0Chr0n repository into the appropriate directory of the QMK structure:
     ```sh
-    cd qmk_firmware/keyboards/keychron/q2/ansi_encoder/keymaps
+    cd qmk_firmware/keyboards/keychron/q2_pro/ansi_encoder/keymaps
     git clone https://github.com/Brieden/Ne0Chr0n.git
     ```
 3. Compile the firmware:
