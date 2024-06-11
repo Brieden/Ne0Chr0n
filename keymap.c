@@ -15,23 +15,33 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "keymap_german.h"
 
 enum layers {
-    MAC_BASE,
+    NEO1,
+    NEO3,
     WIN_BASE,
     MAC_FN1,
     WIN_FN1,
     FN2,
 };
+#define _______ KC_TRNS
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [MAC_BASE] = LAYOUT_ansi_knob_67(
-        KC_ESC,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,           KC_MUTE,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,           KC_DEL,
-        KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_ENT,            KC_HOME,
-        KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,                      KC_RSFT,  KC_UP,
-        KC_LCTL,  KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD,MO(MAC_FN1),MO(FN2), KC_LEFT,  KC_DOWN, KC_RGHT),
+    [NEO1] = LAYOUT_ansi_knob_67(
+        KC_ESC,   DE_1,     DE_2,     DE_3,     DE_4,     DE_5,     DE_6,     DE_7,     DE_8,     DE_9,     DE_0,     DE_MINS,  DE_GRV,   KC_BSPC,           KC_MUTE,
+        KC_TAB,   DE_X,     DE_V,     DE_L,     DE_C,     DE_W,     DE_K,     DE_H,     DE_G,     DE_F,     DE_Q,     DE_SS,    KC_RBRC,  MO(NEO3),          KC_DEL,
+        MO(NEO3), DE_U,     DE_I,     DE_A,     DE_E,     DE_O,     DE_S,     DE_N,     DE_R,     DE_T,     DE_D,     DE_Y,                    KC_ENT,       KC_HOME,
+        KC_LSFT,  DE_UDIA,  DE_ODIA,  DE_ADIA,  DE_P,     DE_Z,     DE_B,     DE_M,     DE_COMM,  DE_DOT,   DE_J,                         KC_RSFT,  KC_UP,
+        KC_LCTL,  KC_LOPTN, KC_LCMMD,                              KC_SPC,                                 KC_RCMMD,MO(MAC_FN1),MO(FN2), KC_LEFT,  KC_DOWN, KC_RGHT),
+
+    [NEO3] = LAYOUT_ansi_knob_67(
+        KC_ESC,   DE_1,     DE_2,     DE_3,     DE_4,     DE_5,     DE_6,     DE_7,     DE_8,     DE_9,     DE_0,     DE_MINS,  DE_GRV,   KC_BSPC,           KC_MUTE,
+        KC_TAB,   DE_X,     DE_V,     DE_L,     DE_C,     DE_W,     DE_K,     DE_H,     DE_G,     DE_F,     DE_Q,     DE_SS,    KC_RBRC,  _______,           KC_DEL,
+        KC_CAPS,  DE_U,     DE_I,     DE_A,     DE_E,     DE_O,     DE_S,     DE_N,     DE_R,     DE_T,     DE_D,     DE_Y,                    KC_ENT,       KC_HOME,
+        KC_LSFT,  DE_UDIA,  DE_ODIA,  DE_ADIA,  DE_P,     DE_Z,     DE_B,     DE_M,     DE_COMM,  DE_DOT,   DE_J,                         KC_RSFT,  KC_UP,
+        KC_LCTL,  KC_LOPTN, KC_LCMMD,                              KC_SPC,                                 KC_RCMMD,MO(MAC_FN1),MO(FN2), KC_LEFT,  KC_DOWN, KC_RGHT),
 
     [WIN_BASE] = LAYOUT_ansi_knob_67(
         KC_ESC,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,           KC_MUTE,
@@ -64,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [MAC_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [NEO1] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [WIN_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [MAC_FN1]  = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
     [WIN_FN1]  = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
